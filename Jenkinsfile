@@ -15,6 +15,6 @@ node {
         bat 'ng build --prod'
     }
     stage('Test') {
-        bat 'ng test'
+        bat 'npm run test-headless'
     }
 }
