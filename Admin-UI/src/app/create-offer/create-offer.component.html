@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="responsive-table">          
+        <table border="1" class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Offer</th>
+              <th>Validity</th>
+              <th>Price</th>
+              <th>Modify</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let offer of offerData">
+              <td>{{offer.offerName}}</td>
+              <td>{{offer.validityInDays}}</td>
+              <td>{{currencySymbol}}{{offer.price}}</td>
+              <td>
+                <button type="button" class="btn btn-primary" (click)="modifyOffer(offer)" >Modify Offer</button>
+                <button type="button" class="btn btn-primary" (click)="deleteOffer(offer)" >Delete Offer</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="col-sm-3" style="float:inherit">
+      <button type="button" class="btn btn-primary"  [routerLink]="['/sideBar/create-single-offer']" >Create Offer</button>
+    </div>
+  </div>
+</div>
+

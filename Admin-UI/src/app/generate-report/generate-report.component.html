@@ -1,0 +1,38 @@
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="container-fluid">
+      <div class=" sign-in-div">
+        <div style="margin-top: 0px; color:rebeccapurple;">
+          <div>
+              <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">File Name</th>
+                      <th scope="col">Download</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Subscriber's Report</td>
+                      <td><a (click)="downloadFile('subscriberdata')">
+                          <i class="fa fa-download fa-2x"  aria-hidden="true"></i>
+                      </a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Offer Report</td>
+                      <td><a (click)="downloadFile('offerdata')">
+                          <i class="fa fa-download fa-2x"  aria-hidden="true"></i>
+                      </a></td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

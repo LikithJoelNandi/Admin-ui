@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <span class="title">Telecom Service Provider </span> 
+        <a class="navbar-brand dellimage" href="#">
+          <img src="/assets/dellemc.png" class="d-inline-block align-top dellimage" alt="">
+        
+          <!-- Telecom Service Provider -->
+        </a>
+        <div class="logoutBtn" *ngIf="online">
+            <button  routerLink="/" class="btn btn-primary">Logout</button>
+        </div>
+      </div>
+    <!--   <button [hidden]="hideButton"  type="button" class="btn btn-primary">Logout</button> -->
+    </nav>
+  </div>
+</div>
+
+
+<div class="row" class="custom-fixed">
+  <div class="col-12">
+    <router-outlet></router-outlet>
+    <!-- <app-sign-in></app-sign-in> -->
+  </div>
+</div>
+<!-- <ng-http-loader>
+  [backdrop]="false"
+  [backgroundColor]="'#ff0000'"
+  [debounceDelay]="100"
+  [extraDuration]="600"
+  [minDuration]="600"
+  [opacity]=".6"
+  [spinner]="spinkit.skWave"
+</ng-http-loader> -->
