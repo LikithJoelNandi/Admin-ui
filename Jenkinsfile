@@ -15,6 +15,6 @@ node {
         sh 'ng build --prod'
     }
     stage('Test') {
-        sh 'ng run test -headless'
+        sh 'npm run test-headless'
     }
 }
