@@ -126,6 +126,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
+            "codeCoverage": true,
+            "main": "src/test.ts",
             "tsConfig": "e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
