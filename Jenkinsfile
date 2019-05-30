@@ -11,10 +11,13 @@ node {
     stage('Installing NodeModules') {
         sh 'npm install'
     }
-    stage('Build') {
-        sh 'ng build --prod'
-    }
-    stage('Test') {
-        sh 'npm run test-headless'
-    }
+    stage("Build & Unit Tests") {
+			steps{
+				script{
+			def nodeJs = tool 'nodejs';
+			sh "${nodeJs}/npm install ${build_command_install}"
+
+				}
+			}
+		}
 }
