@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://tsp-admin-service.cfapps.io/api/v1/'
+  apiUrl: 'http://10.118.169.49:8889/api/v1/'
 };
