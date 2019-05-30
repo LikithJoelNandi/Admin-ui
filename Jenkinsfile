@@ -1,14 +1,15 @@
-#!groovyâ€‹
-properties([[$class: 'jenkins.model.BuildDiscarderProperty', strategy: [$class: 'LogRotator',
-                                                                        numToKeepStr: '10',
-                                                                        artifactNumToKeepStr: '10']]])
-node {
-    step([$class: 'WsCleanup'])
-    
-    stage('Check Out') {
+#!groovy
+
+pipeline {
+	agent any
+
+	options{
+		skipDefaultCheckout(true)
+	}
+  stage('Check Out') {
         checkout scm
     }
-    stage('Installing NodeModules') {
+  stage('Installing NodeModules') {
         sh 'npm install'
     }
     stage('Build') {
@@ -51,7 +52,6 @@ node {
 				}
 			}
 		}
-    
     stage('Test') {
         sh 'ng run test -headless'
     }
