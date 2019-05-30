@@ -9,9 +9,9 @@ node {
         checkout scm
     }
     stage('Installing NodeModules') {
-        bat 'npm install'
+        sh 'npm install'
     }
     stage('Build') {
-        bat 'ng build --prod'
+        sh 'ng build --prod'
     }
 }
