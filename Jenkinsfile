@@ -8,13 +8,10 @@ node {
     stage('Check Out') {
         checkout scm
     }
-    stage("Build & Unit Tests") {
-			steps{
-				script{
-			def nodeJs = tool 'nodejs';
-			sh "${nodeJs}/npm install ${build_command_install}"
-
-				}
-			}
-		}
+    stage('Installing NodeModules') {
+        bat 'npm install'
+    }
+    stage('Build') {
+        bat 'ng build --prod'
+    }
 }
