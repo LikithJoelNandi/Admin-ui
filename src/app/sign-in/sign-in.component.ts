@@ -45,6 +45,7 @@ export class SignInComponent implements OnInit {
         this.signinService.checkCredentials(value['userName'], value['password'])
       .subscribe(
         (response : string) =>{
+          localStorage.setItem('token', JSON.stringify(response));
           this.credentialCheck  = response;
           if(this.credentialCheck === 'User Not Found!'){
             this.toastr.sendErrorMessage("User Not Found!")

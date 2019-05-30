@@ -8,7 +8,7 @@ import { EnrollSubscriberComponent } from './enroll-subscriber/enroll-subscriber
 import { DeleteOfferComponent } from './delete-offer/delete-offer.component';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
 import { GenerateReportComponent } from './generate-report/generate-report.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataStorageService } from './shared/data-storage.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalBasic } from './modal.basic';
@@ -23,6 +23,8 @@ import { RouterModule } from '@angular/router';
 import { OffersComponent } from './offers/offers.component';
 import { AlertComponent } from './_components/alert/alert.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthService } from './_service/auth.service';
+import { TokenInterceptor } from './auth/token.iterceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,12 @@ import { RegisterComponent } from './register/register.component';
     NgHttpLoaderModule.forRoot(),
     RouterModule
   ],
-  providers: [DataStorageService, TSPToastrService],
+  providers: [DataStorageService, TSPToastrService/*  AuthService, */
+   /*  {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    } */],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

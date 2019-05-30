@@ -1,7 +1,7 @@
 
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SubscriberData } from '../data/subscriber-data';
 import { Offer } from '../_models/Offer';
 import { Observable } from 'rxjs';
@@ -12,12 +12,17 @@ const endpoint = environment.apiUrl;;
 @Injectable()
 export class DataStorageService {
 
+    /* httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': 'Bearer '+localStorage.getItem('token').replace('"','').replace('"','')
+        })}
+ */
     constructor(private http : HttpClient){}
 
     public hideButton = true;
 
     enrollSubscriberData(subs : SubscriberData ){
-        console.log('Hello World'+ subs);
         return this.http.post(endpoint+"enroll/",  
         subs,
         {responseType: 'json'});
