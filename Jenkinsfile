@@ -8,9 +8,6 @@ node {
     stage('Check Out') {
         checkout scm
     }
-    stage('Installing NodeModules') {
-        sh 'npm install'
-    }
     stage("Build & Unit Tests") {
 			steps{
 				script{
