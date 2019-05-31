@@ -11,9 +11,6 @@ node {
     stage('Installing NodeModules') {
         sh 'npm install'
     }
-  stage('sonar') {
-        sh 'sonar-scanner'
-  }
     stage('Build') {
         sh 'ng build --prod'
     }
